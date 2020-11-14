@@ -50,8 +50,8 @@ class App extends React.Component {
             }
         }): champions;
         return filteredChampions.length ? (
-            <div>
-                <h3>Free Rotation Champions:</h3>
+            <main id="main">
+                <h2 id="title">Free Rotation Champions:</h2>
                 <div id="championCards">
                     {
                         filteredChampions.map(champion => {
@@ -63,27 +63,40 @@ class App extends React.Component {
                         })
                     }
                 </div>
-                    <h3>Filter by tags:</h3>
+                <div id="filter">
+                    <h3 id="title" className="smallerTitle">Filter by tags:</h3>
                     <form onSubmit={ getFilters }>
-                        <input type="checkbox" name="filter" value="Assassin" onChange={ changeState('Assassin')} />
-                        <label className="assassin">Assassin</label>
-                        <input type="checkbox" name="filter" value="Fighter" onChange={ changeState('Fighter')} />
-                        <label className="Fighter">Fighter</label>
-                        <input type="checkbox" name="filter" value="Mage" onChange={ changeState('Mage')} />
-                        <label className="Mage">Mage</label>
-                        <input type="checkbox" name="filter" value="Marksman" onChange={ changeState('Marksman')} />
-                        <label className="Marksman">Marksman</label>
-                        <input type="checkbox" name="filter" value="Support" onChange={ changeState('Support')} />
-                        <label className="Support">Support</label>
-                        <input type="checkbox" name="filter" value="Tank" onChange={ changeState('Tank')} />
-                        <label className="Tank">Tank</label>
-                        <button>Filter</button>
+                        <div id="assassin">
+                            <input type="checkbox" name="filter" value="Assassin" onChange={ changeState('Assassin')} />
+                            <label className="assassin">Assassin</label>
+                        </div>
+                        <div id="fighter">
+                            <input type="checkbox" name="filter" value="Fighter" onChange={ changeState('Fighter')} />
+                            <label className="Fighter">Fighter</label>
+                        </div>
+                        <div id="mage">
+                            <input type="checkbox" name="filter" value="Mage" onChange={ changeState('Mage')} />
+                            <label className="Mage">Mage</label>
+                        </div>
+                        <div id="marksman">
+                            <input type="checkbox" name="filter" value="Marksman" onChange={ changeState('Marksman')} />
+                            <label className="Marksman">Marksman</label>
+                        </div>
+                        <div id="support">
+                            <input type="checkbox" name="filter" value="Support" onChange={ changeState('Support')} />
+                            <label className="Support">Support</label>
+                        </div>
+                        <div id="tank">
+                            <input type="checkbox" name="filter" value="Tank" onChange={ changeState('Tank')} />
+                            <label className="Tank">Tank</label>
+                        </div>
+                        <div id="button">
+                            <button>Filter</button>
+                        </div>
                     </form>
-                <div>
-
                 </div>
-            </div>
-        ) : <div>The Champions did not load, we are sorry.</div>;
+            </main>
+        ) : <div className="error">The Champions did not load, we are sorry.</div>;
     }
 }
 

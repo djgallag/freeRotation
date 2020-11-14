@@ -8,8 +8,7 @@ export const ChampionCard = ({ champion }) => {
                 <img src={champion.imageUrl} />
             </div>
             <div className="championInfo">
-                <h3>{champion.name},</h3>
-                <p className="title">{champion.title}</p>
+                <h3>{champion.name}, {champion.title}</h3>
                 <p>Tags: {tags}</p>
             </div>
         </div>

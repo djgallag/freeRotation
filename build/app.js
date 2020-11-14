@@ -11804,7 +11804,11 @@ var App = /*#__PURE__*/function (_React$Component) {
           _iterator.f();
         }
       }) : champions;
-      return filteredChampions.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Free Rotation Champions:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      return filteredChampions.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", {
+        id: "main"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+        id: "title"
+      }, "Free Rotation Champions:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         id: "championCards"
       }, filteredChampions.map(function (champion) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -11812,8 +11816,15 @@ var App = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ChampionCard__WEBPACK_IMPORTED_MODULE_3__.ChampionCard, {
           champion: champion
         }));
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Filter by tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "filter"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+        id: "title",
+        className: "smallerTitle"
+      }, "Filter by tags:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
         onSubmit: getFilters
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "assassin"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "checkbox",
         name: "filter",
@@ -11821,42 +11832,56 @@ var App = /*#__PURE__*/function (_React$Component) {
         onChange: changeState('Assassin')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
         className: "assassin"
-      }, "Assassin"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, "Assassin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "fighter"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "checkbox",
         name: "filter",
         value: "Fighter",
         onChange: changeState('Fighter')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
         className: "Fighter"
-      }, "Fighter"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, "Fighter")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "mage"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "checkbox",
         name: "filter",
         value: "Mage",
         onChange: changeState('Mage')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
         className: "Mage"
-      }, "Mage"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, "Mage")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "marksman"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "checkbox",
         name: "filter",
         value: "Marksman",
         onChange: changeState('Marksman')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
         className: "Marksman"
-      }, "Marksman"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, "Marksman")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "support"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "checkbox",
         name: "filter",
         value: "Support",
         onChange: changeState('Support')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
         className: "Support"
-      }, "Support"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, "Support")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "tank"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "checkbox",
         name: "filter",
         value: "Tank",
         onChange: changeState('Tank')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
         className: "Tank"
-      }, "Tank"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Filter")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "The Champions did not load, we are sorry.");
+      }, "Tank")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Filter"))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "error"
+      }, "The Champions did not load, we are sorry.");
     }
   }]);
 
@@ -11895,9 +11920,7 @@ var ChampionCard = function ChampionCard(_ref) {
     src: champion.imageUrl
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "championInfo"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, champion.name, ","), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "title"
-  }, champion.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Tags: ", tags)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, champion.name, ", ", champion.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Tags: ", tags)));
 };
 
 /***/ }),
@@ -11949,7 +11972,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html,\nbody {\n  height: 500px;\n  width: 800px;\n  margin: 0;\n  padding: 0;\n  overflow-x: hidden;\n}", "",{"version":3,"sources":["webpack://./server/public/index.css"],"names":[],"mappings":"AAAA;;EAEE,aAAa;EACb,YAAY;EACZ,SAAS;EACT,UAAU;EACV,kBAAkB;AACpB","sourcesContent":["html,\nbody {\n  height: 500px;\n  width: 800px;\n  margin: 0;\n  padding: 0;\n  overflow-x: hidden;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html,\nbody {\n  max-height: 600px;\n  width: 800px;\n  margin: 0;\n  padding: 0;\n  overflow-x: hidden;\n  background-color: #F5F1E3;\n}\n\n* {\n  margin: 0;\n}\n\nimg {\n  width: 70px;\n  height: 70px;\n}\n\nmain {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#championCards {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n}\n\n.championCard {\n  width: calc((800px / 5) - 8px);\n  height: calc((800px / 5) - 8px);\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background-color: #2F4858;\n  border-radius: 25px;\n  margin-bottom: 8px;\n  color: white;\n}\n\n.championInfo {\n  text-align: center;\n  margin: 0;\n}\n\nform {\n  display: flex;\n  justify-content: center;\n}\n\nform > div {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n\n#filter {\n  background-color: #86BBD8;\n  border-bottom: 10px solid transparent;\n}\n\n#title {\n  text-align: center;\n  padding: 5px;\n}\n\n.smallerTitle {\n  font-size: 20px;\n}\n\nh2 {\n  font-size: 35px;\n  background-color: #86BBD8;\n  margin-bottom: 5px;\n}\n\nlabel {\n  font-size: 15px;\n  margin-left: 4px;\n}\n\n.error {\n  font-size: 5px;\n  text-align: center;\n  color: red;\n}", "",{"version":3,"sources":["webpack://./server/public/index.css"],"names":[],"mappings":"AAAA;;EAEE,iBAAiB;EACjB,YAAY;EACZ,SAAS;EACT,UAAU;EACV,kBAAkB;EAClB,yBAAyB;AAC3B;;AAEA;EACE,SAAS;AACX;;AAEA;EACE,WAAW;EACX,YAAY;AACd;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,8BAA8B;AAChC;AACA;EACE,aAAa;EACb,eAAe;EACf,6BAA6B;AAC/B;;AAEA;EACE,8BAA8B;EAC9B,+BAA+B;EAC/B,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;EACvB,yBAAyB;EACzB,mBAAmB;EACnB,kBAAkB;EAClB,YAAY;AACd;;AAEA;EACE,kBAAkB;EAClB,SAAS;AACX;;AAEA;EACE,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,iBAAiB;EACjB,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;EACzB,qCAAqC;AACvC;;AAEA;EACE,kBAAkB;EAClB,YAAY;AACd;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,yBAAyB;EACzB,kBAAkB;AACpB;;AAEA;EACE,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,cAAc;EACd,kBAAkB;EAClB,UAAU;AACZ","sourcesContent":["html,\nbody {\n  max-height: 600px;\n  width: 800px;\n  margin: 0;\n  padding: 0;\n  overflow-x: hidden;\n  background-color: #F5F1E3;\n}\n\n* {\n  margin: 0;\n}\n\nimg {\n  width: 70px;\n  height: 70px;\n}\n\nmain {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#championCards {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n}\n\n.championCard {\n  width: calc((800px / 5) - 8px);\n  height: calc((800px / 5) - 8px);\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background-color: #2F4858;\n  border-radius: 25px;\n  margin-bottom: 8px;\n  color: white;\n}\n\n.championInfo {\n  text-align: center;\n  margin: 0;\n}\n\nform {\n  display: flex;\n  justify-content: center;\n}\n\nform > div {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n\n#filter {\n  background-color: #86BBD8;\n  border-bottom: 10px solid transparent;\n}\n\n#title {\n  text-align: center;\n  padding: 5px;\n}\n\n.smallerTitle {\n  font-size: 20px;\n}\n\nh2 {\n  font-size: 35px;\n  background-color: #86BBD8;\n  margin-bottom: 5px;\n}\n\nlabel {\n  font-size: 15px;\n  margin-left: 4px;\n}\n\n.error {\n  font-size: 5px;\n  text-align: center;\n  color: red;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
